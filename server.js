@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const app = express();
+const PORT = process.env.PORT || 3159
 
 const LoginRoute = require("./routes/LoginRoute");
 
@@ -31,7 +32,7 @@ mongoose.connect(
     if (err) throw err;
     console.log("Database connected !!");
 
-    app.listen(3159, () => {
+    app.listen(PORT, () => {
       console.log("server is stared on 3159 !!!");
     });
   }
